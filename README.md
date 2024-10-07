@@ -3,7 +3,9 @@
 This is a hydraulics project powered by javascript, html and css. The developed
 application computes flow characteristics of rectangular, triangular and
 trapezoidal sections under uniform, rapidly varied and gradually varied
-flow conditions.  This project was developed as an approach to an undergraduate hydraulics assignment in civil engineering
+flow conditions. This project was developed as an approach to an undergraduate hydraulics assignment in civil engineering.
+
+![Archictecture](proflow.PNG)
 
 ## How to Download the APP
 
