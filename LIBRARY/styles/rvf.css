@@ -1,0 +1,43 @@
+
+#rvfTable{
+    display: none;
+    margin: 5px;
+    padding: 5px;
+    border-collapse: collapse;
+    justify-content: center;
+    background-color: rgba(255, 166, 0, 0.65);
+    margin: 5px;
+    padding: 5px;
+}
+
+#HydraulicJumpB{
+    text-align: center;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+    font-size: large;
+    margin-left: 5px;
+    border-radius: 3px;
+    border-style: none;
+}
+
+#HydraulicJumpB:hover{
+ font-family: 'Courier New', Courier, monospace;
+    cursor: pointer;
+    color: white;
+    background-color:  rgb(10, 6, 23);
+    font-weight: bolder;
+    box-shadow: -3px -3px black;
+    border-radius: 3px;
+}
+
+.rvfTd1{
+    /*width: 200px;*/
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bolder;
+}
+#hTable, .extrarow,.extravalue{
+    border-collapse: collapse;
+    border-style: solid;
+    border-color: green;
+    
+}

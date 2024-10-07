@@ -1,0 +1,15 @@
+.hInput{
+	padding-top: 3px;
+	border-radius: 5px;
+	border-color: yellowgreen;
+	border-style: solid;
+	padding: 3px;
+	margin: 3px;
+	width: 100px;
+	font-family: 'Comic Sans MS',monospace;
+}
+.hLabel{
+	font-size: small;
+	width: fit-content;
+	padding: 1px;
+}

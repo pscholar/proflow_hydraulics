@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" type="image/x-icon" href="../images/favicon.png" />
+        <link  rel="stylesheet" type="text/css" href="../styles/mainstyle.css" >
+        <link  rel="stylesheet" type="text/css" href="../styles/tutorial.css">
+        <title>PROFLOW USER GUIDE</title>
+    </head>
+    <body style="background-image: none;background-color: white;">
+        <div>
+            <div id ="header">
+                <table id = "tableheader">
+                <tr>
+                <td style="width:50%"><button id="newButton" class ="topbuttons">
+                    <a href="tutorial.html" target="_self"><img src="../images/homeicon.jpeg"  id="menu" width="25px" height="25px"></a></button>
+                <td id ="toptext"><label id ="toptext">PROFLOW USER GUIDE AND THEORY NOTES</label></td>
+                 </tr>
+                </table>
+                </div>
+        </div>
+        <div id="content2">
+        <div>
+            <h1>Contents</h1>
+            <ul style="list-style-type:none;">
+                <li>
+                    <a href="tutorial.html" class="headlinks" target="_self">Introduction</a>
+                </li>
+                <li>
+                    <a href="rectangular.html" class="headlinks" target="_self">Using ProFlow for ChannelSection Analysis(with example on rectangular channels)</a>
+
+                </li>
+                <li>
+                    <a href="notes.html" class="headlinks" target="_self">ProFlow Theory (Notes)</a>
+
+                </li>
+                <li>
+                 <a href="nan.html" class="headlinks" target="_self">The NaN Result (A note on how data should be entered)</a>
+
+                 </li>
+                 <li>
+                    <a href="feedstudy.html" class="headlinks" target="_self">Sending Feedback and Viewing Study Material</a>
+                    </li>
+            </ul>
+        </div>
+      <div id="rapidFlow">
+        <h3>Rapidly Varied Flow Analysis</h3>
+        <p>
+            Under this flow type, the program provides support for the <b>hydraulic jump</b> analysis. <br>
+            The program inputs upstream conditions and calculates the sequent depth ratio, energy loss,and other flow properties, if the specified consitions can really cause a jump to occur.
+            <ol>
+                <li>To enable rapidly varied flow analysis, click the button labeled <b>rapidly varied flow</b>. The user interface will change and appear as shown below.<br>
+                <img src="../images/rapid1.PNG" width="85%"><br>
+                <i><b>Notice the image illustration on the left!</b></i>
+                </li>
+                <li>Enter values of the required upstream conditions. For this tutorial use Upstream Depth y1 = 0.28, bottom width b = 3,discharge Q = 7.8
+                </li>
+                <li>Then click <b>solve</b> button<br>
+                     Output should appear as below
+                    <br>
+                    <img src="../images/rapid2.PNG" width="85%">
+                </li>
+            </ol>
+            <b>NB: </b>The <i><strong>reset</strong></i> button can be used to clear all inputs, and the graphical area.
+          
+
+        </p>
+      </div>
+      </div>
+      <div align="center"><a href="gradual.html" target="_self"><img src="../images/next.png" width="100px" height="50px"></a></div>
+    </body>
+</html>

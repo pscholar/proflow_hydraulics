@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script type="text/javascript" src="LIBRARY/scripts/handlePlot.js"></script>
+    <script type="text/javascript" src="LIBRARY/scripts/smtp.js"></script>
+    <script type="text/javascript" src="LIBRARY/scripts/study.js"></script>
+    <script type="text/javascript" src="LIBRARY/scripts/plot.js"></script>
+    <script
+      type="text/javascript"
+      src="LIBRARY/scripts/uniformflow.js"
+    ></script>
+    <script type="text/javascript" src="LIBRARY/scripts/feedback.js"></script>
+    <script type="text/javascript" src="LIBRARY/scripts/main.js"></script>
+    <script type="text/javascript" src="LIBRARY/scripts/jump.js"></script>
+    <script type="text/javascript" src="LIBRARY/scripts/handleRVF.js"></script>
+    <script type="text/javascript" src="LIBRARY/scripts/handleGVF.js"></script>
+    <script type="text/javascript" src="LIBRARY/scripts/state.js"></script>
+    <script type="text/javascript" src="LIBRARY/scripts/rvf.js"></script>
+    <script type="text/javascript" src="LIBRARY/scripts/gvf.js"></script>
+    <link rel="icon" type="image/x-icon" href="LIBRARY/images/favicon.png" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="LIBRARY/styles/mainstyle.css"
+    />
+    <link rel="stylesheet" type="text/css" href="LIBRARY/styles/feedback.css" />
+    <link rel="stylesheet" type="text/css" href="LIBRARY/styles/tutorial.css" />
+    <link rel="stylesheet" type="text/css" href="LIBRARY/styles/rvf.css" />
+    <link rel="stylesheet" type="text/css" href="LIBRARY/styles/gvf.css" />
+    <link rel="stylesheet" type="text/css" href="LIBRARY/styles/hjump.css" />
+    <title>PROFLOW APP</title>
+  </head>
+  <body>
+    <div id="header">
+      <table id="tableheader">
+        <tr>
+          <td style="width: 50%">
+            <button id="newButton" class="topbuttons">New</button
+            ><a href="LIBRARY/pages/tutorial.html" target="_blank"
+              ><button class="topbuttons">Tutorial</button></a
+            ><button class="topbuttons" onclick="onFeedback()">Feedback</button
+            ><button class="topbuttons" onclick="onStudy()">Study</button>
+          </td>
+          <td id="toptext">
+            <label id="toptext">PROFLOW</label>
+            <img
+              alt="logo"
+              src="LIBRARY/images/favicon.png"
+              id="toplogo"
+              align="right"
+            />
+          </td>
+        </tr>
+      </table>
+    </div>
+    <div id="contentbody">
+      <div id="intropop">
+        <div id="intropopClose">
+          <div style="margin-left: 8px">
+            <img
+              src="LIBRARY/images/favicon.png"
+              height="28px"
+              width="28px"
+              align="left"
+            />
+            <h3 id="intropopLabel">PROFLOW</h3>
+          </div>
+          <div aligh="right">
+            <img
+              src="LIBRARY/images/close.png"
+              height="30"
+              width="30"
+              class="closeImage"
+              align="right"
+              onclick="onCloseClick()"
+            />
+          </div>
+        </div>
+        <div id="intropopDivTable">
+          <table id="intropopTable">
+            <tr>
+              <td>
+                <a href="LIBRARY/pages/tutorial.html" target="_blank"
+                  ><button class="intropopButtons" id="tutorialB">
+                    TUTORIAL ON USE
+                  </button></a
+                >
+              </td>
+            </tr>
+            <tr>
+              <td>
+                <button class="intropopButtons" id="createProject">
+                  CREATE NEW PROJECT
+                </button>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div id="operationSelection">
+        <div id="operateToolBar">
+          <table id="projectsTable">
+            <tr>
+              <td colspan="3" id="categoryTr">PROJECT CATEGORY</td>
+            </tr>
+            <tr>
+              <td class="categoryTd">
+                <button class="categoryButtons" id="flowButton">
+                  Open Flow Analysis
+                </button>
+              </td>
+            </tr>
+            &micro;
+          </table>
+        </div>
+        <div id="operateSections">
+          <table id="sectionsTable" style="display: none">
+            <tr id="operateTr">
+              <td
+                colspan="3"
+                style="
+                  text-align: center;
+                  background-color: white;
+                  color: black;
+                  font-weight: bolder;
+                "
+              >
+                CHANNEL SECTIONS
+              </td>
+            </tr>
+            <tr id="sectionsRow">
+              <td class="sectionspart">
+                <img
+                  src="LIBRARY/images/uniformTriangular.png"
+                  class="sectionsimages"
+                /><br /><button
+                  class="sectionsButtons sectionsButtons1"
+                  value="1"
+                  onclick="initStates(0,1)"
+                >
+                  Triangular
+                </button>
+              </td>
+              <td class="sectionspart">
+                <img
+                  src="LIBRARY/images/uniformTrapezium.png"
+                  class="sectionsimages"
+                /><br /><button
+                  class="sectionsButtons sectionsButtons1"
+                  value="2"
+                  onclick="initStates(0,2)"
+                >
+                  Trapezoidal
+                </button>
+              </td>
+              <td class="sectionspart">
+                <img
+                  src="LIBRARY/images/uniformrectangular.png"
+                  class="sectionsimages"
+                /><br /><button
+                  class="sectionsButtons sectionsButtons1"
+                  id="rectangleClick"
+                  value="0"
+                  onclick="initStates(0,0)"
+                >
+                  Rectangular
+                </button>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+      <div id="workingDiv">
+        <div id="workingSection">
+          <div id="flowTypeDiv">
+            <table id="flowTypeTable">
+              <tr style="padding: 5px">
+                <td id="uniformTd" onclick="initStates(0,shape)">
+                  uniform flow
+                </td>
+                <td id="rapidTd" onclick="initStates(1,shape)">
+                  rapidly varied flow
+                </td>
+                <td id="gradualTd" onclick="initStates(2,shape)">
+                  gradually varied flow
+                </td>
+              </tr>
+            </table>
+            <table id="rvfTable">
+              <tr>
+                <td id="hydraulicjump" colspan="2">
+                  <label id="HydraulicJumpB" class="rvfB"
+                    >Hydraulic Jump Analysis</label
+                  >
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div id="taskDiv">
+            <div id="findLabelDiv" class="taskDivLabel">
+              <label class="labelFind">Find</label>
+            </div>
+            <div class="dropdowns majordrop">
+              <table>
+                <tr>
+                  <td id="taskDisplay">
+                    <button class="dropButtons">
+                      <label class="taskLabels" id="tasklabel_1"
+                        >discharge</label
+                      ><img
+                        src="LIBRARY/images/droparrow.png"
+                        class="droparrows dropdowns_1"
+                        id="hover1"
+                      />
+                    </button>
+                  </td>
+                </tr>
+              </table>
+              <div id="finddropdown" class="dropdown-content majord">
+                <table class="choicetables" id="findTable">
+                  <tr>
+                    <td>
+                      <input
+                        type="radio"
+                        id="finddischarge"
+                        name="taskSelect"
+                        class="tasks"
+                        value="discharge"
+                      />
+                      <label for="finddischarge">Discharge-Q</label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input
+                        type="radio"
+                        id="finddepth"
+                        name="taskSelect"
+                        class="tasks"
+                        value="normaldepth"
+                      />
+                      <label for="finddepth">Normal Depth-y</label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input
+                        type="radio"
+                        id="findReynold"
+                        name="taskSelect"
+                        class="tasks"
+                        value="reynold's"
+                      />
+                      <label for="findReynold">Reynold's-Re</label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input
+                        type="radio"
+                        id="findFroude"
+                        name="taskSelect"
+                        class="tasks"
+                        value="froude"
+                      />
+                      <label for="findFroude">Froude-Fr</label>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <input
+                        type="radio"
+                        id="findVelocity"
+                        name="taskSelect"
+                        class="tasks"
+                        value="velocity"
+                      />
+                      <label for="findVelocity">Velocity-V</label>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div id="findLabelDiv" class="taskDivLabel">
+              <label class="labelFind">Choose</label>
+            </div>
+            <div class="dropdowns">
+              <table>
+                <tr>
+                  <td id="taskDisplay">
+                    <button class="dropButtons">
+                      <label class="taskLabels">parameters</label
+                      ><img
+                        src="LIBRARY/images/droparrow.png"
+                        class="droparrows"
+                        id="hover2"
+                      />
+                    </button>
+                  </td>
+                </tr>
+              </table>
+              <div id="parameterdropdown" class="dropdown-content">
+                <table class="choicetables" id="parameterTable"></table>
+                <div id="okdiv">
+                  <button id="okbutton">OK</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div id="mainentry">
+            <div id="imageportion">
+              <div id="shapeId">
+                <img src="" id="shapeshow" class="shapeshows" />
+              </div>
+              <div id="tableCombinationsDiv">
+                <h3 id="supportedheader">Supported Combinations</h3>
+                <table id="combinationsTable">
+                  <tr class="combinationsHeader">
+                    <td class="combinationsHeader">input</td>
+                    <td class="combinationsHeader">output</td>
+                  </tr>
+                </table>
+              </div>
+            </div>
+            <div id="entryDiv">
+              <table id="tableEnter"></table>
+            </div>
+            <div id="commentsDiv">
+              <div id="extraDiv">
+                <table id="extraTable">
+                  <tr>
+                    <td colspan="5">side slopes</td>
+                  </tr>
+                  <tr>
+                    <td>a</td>
+                    <td><input type="text" class="extraInputs" id="y1" /></td>
+                    <td>e</td>
+                    <td><input type="text" class="extraInputs" id="x1" /></td>
+                    <td>or &theta;<sub>1</sub></td>
+                    <td colspan="2">
+                      <input type="text" class="extraInputs" id="ang1" />
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>c</td>
+                    <td><input type="text" class="extraInputs" id="y2" /></td>
+                    <td>d</td>
+                    <td><input type="text" class="extraInputs" id="x2" /></td>
+                    <td>or &theta;<sub>2</sub></td>
+                    <td colspan="2">
+                      <input type="text" class="extraInputs" id="ang2" />
+                    </td>
+                  </tr>
+                </table>
+              </div>
+              <div id="completionDiv">
+                <div>
+                  <td class="vartd"><button id="solve">solve</button></td>
+                </div>
+                <div id="resetDiv">
+                  <button type="reset" class="resetter" id="resetter">
+                    reset
+                  </button>
+                </div>
+              </div>
+              <div id="extraDivT">
+                <table id="extraOut"></table>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div id="visualArea">
+          <div id="graphTDiv">
+            <table id="tableTitle">
+              <tr>
+                <td colspan="2" id="graphTitle"></td>
+              </tr>
+            </table>
+          </div>
+          <svg width="375" height="375" id="svg">
+            <polyline id="curvepoly" />
+          </svg>
+          <div align="center" style="color: blue; font-weight: bolder">
+            &COPY; scholar
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" type="image/x-icon" href="../images/favicon.png" />
+        <link  rel="stylesheet" type="text/css" href="../styles/mainstyle.css" >
+        <link  rel="stylesheet" type="text/css" href="../styles/tutorial.css">
+        <title>PROFLOW USER GUIDE</title>
+    </head>
+    <body style="background-image: none;background-color: white;">
+        <div>
+            <div id ="header">
+                <table id = "tableheader">
+                <tr>
+                <td style="width:50%"><button id="newButton" class ="topbuttons">
+                <a href="tutorial.html" target="_self"><img src="../images/homeicon.jpeg"  id="menu" width="25px" height="25px"></a></button>
+                <td id ="toptext"><label id ="toptext">PROFLOW USER GUIDE AND THEORY NOTES</label></td>
+                 </tr>
+                </table>
+                </div>
+        </div>
+        <div id="content2">
+        <div>
+            <h1>Contents</h1>
+            <ul style="list-style-type:none;">
+                <li>
+                    <a href="tutorial.html" class="headlinks" target="_self">Introduction</a>
+                </li>
+                <li>
+                    <a href="rectangular.html" class="headlinks" target="_self">Using ProFlow for ChannelSection Analysis(with example on rectangular channels)</a>
+
+                </li>
+                <li>
+                    <a href="notes.html" class="headlinks" target="_self">ProFlow Theory (Notes)</a>
+
+                </li>
+                <li>
+                 <a href="nan.html" class="headlinks" target="_self">The NaN Result (A note on how data should be entered)</a>
+
+                 </li>
+                 <li>
+                    <a href="feedstudy.html" class="headlinks" target="_self">Sending Feedback and Viewing Study Material</a>
+                    </li>
+            </ul>
+        </div>
+      <div id="gradualAnalysis">
+        <h3>Gradually Varied Flow Analysis</h3>
+        <p>
+            Here emphasis is put on drawing the water surface profile. The program generates the profile, and calculates water curve length;<br>
+            <ol>
+                <li>Click the <b>gradually varied flow</b> button. An interface as below will show up<br>
+                <img src="../images/gradual1.PNG" width="85%" />
+                </li>
+                <li>
+                    Enter in the requested parameters: e.g discharge Q = 15 , Known control depth = 3.8; bottom width = 7, manning n = 0.020, S<sub>o</sub> = 0.0015<br>
+                    <blockquote><i><b>NB: The known control depth is the depth at the control point, i.e point at which the flow properties are known</b></i></blockquote>
+                </li>
+                <li>
+                    Then click the <b>solve</b> button; The out put will appear as below.<br>
+                    <img src="../images/gvf2.PNG" width="85%"><br>
+                </li>
+                <li>To view results in tabulated form; Click on the button labeled <b>show tabular data</b>. This button appears below the water surface profile <br>
+                A table as below will pop up.<br>
+                <img src="../images/table.PNG" width="85%">
+                <br>
+                <blockquote><i><b>Look at the <u>Key Table</u>(Appears below the section shape image) to know the meaning of symbols that are used in the table</b></i></blockquote>
+            </li>
+            </ol>
+
+        </p>
+      </div>
+        </div>
+      <div align="center"><a href="notes.html" target="_self"><img src="../images/next.png" width="100px" height="50px"></a></div>
+    </body>
+</html>

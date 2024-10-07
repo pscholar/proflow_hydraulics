@@ -1,0 +1,89 @@
+#visualDiv{
+    position: absolute;
+    z-index: 3;
+    max-height: 460px;
+    display: none;
+    background-color: white;
+    border-style: solid;
+    border-radius: 5px;
+    padding: 5px;
+    border-color: aqua;
+    width: fit-content;
+
+}
+#gvfTable{
+    width: fit-content;
+    text-align: center;
+    display: block;
+    background-color: white;
+    border-collapse: collapse;
+    align-items: center;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: large;
+    height: 400px;
+    max-height: 450px;
+    overflow-y: scroll;
+    
+}
+circle{
+    fill: blue;
+}
+.gvfTd{
+    border-style: solid;
+    border-color: green;
+    border-collapse: collapse;
+    min-width: 10px;
+    align-items: center;
+    padding: 5px;
+  
+}
+.gvfTr{
+    border-style: solid;
+    border-color: green;
+    border-collapse: collapse;
+    align-items: center;
+    border-width: 1px;
+}
+#gvfAns{
+    column-span: 2;
+    color: rgba(0, 0, 255, 0.637);
+    font-size: larger;
+    font-weight: bolder;
+}
+#headerDiv2{
+	width: 100%;
+	text-align: center;
+	font-size: large;
+	padding: 5px;
+}
+#headCancel2{
+	border-style: solid;
+	color: red;
+	padding: 3px;
+	float: right;
+	font-size: large;
+	background-color: black;
+	border-radius: 10px;
+	margin-right: 10px;
+	border-color:red;
+}
+#headCancel2:hover{
+	background-color: white;
+	cursor: pointer;
+}
+#showtableGVF{
+    margin-top:5px;
+    font-family: 'Comic Sans MS',monospace;
+	border-radius: 5px;
+	border-style: none;
+	font-size:medium;
+	background-color: #004080;
+	color: white;
+	box-shadow: -2px -2px orange;
+}
+#showtableGVF:hover{
+	background-color: white;
+	cursor: pointer;
+	color: black
+}

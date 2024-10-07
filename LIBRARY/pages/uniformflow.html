@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="icon" type="image/x-icon" href="../images/favicon.png" />
+        <link  rel="stylesheet" type="text/css" href="../styles/mainstyle.css" >
+        <link  rel="stylesheet" type="text/css" href="../styles/tutorial.css">
+        <title>PROFLOW USER GUIDE</title>
+    </head>
+    <body style="background-image: none;background-color: white;">
+        <div>
+            <div id ="header">
+                <table id = "tableheader">
+                <tr>
+                <td style="width:50%"><button id="newButton" class ="topbuttons">
+                    <a href="tutorial.html" target="_self"><img src="../images/homeicon.jpeg"  id="menu" width="25px" height="25px"></a></button>
+                <td id ="toptext"><label id ="toptext">PROFLOW USER GUIDE AND THEORY NOTES</label></td>
+                 </tr>
+                </table>
+                </div>
+        </div>
+        <div id="content2">
+        <div>
+            <h1>Contents</h1>
+            <ul style="list-style-type:none;">
+                <li>
+                    <a href="tutorial.html" class="headlinks"target="_self">Introduction</a>
+                </li>
+                <li>
+                    <a href="rectangular.html" class="headlinks"target="_self">Using ProFlow for ChannelSection Analysis(with example on rectangular channels)</a>
+
+                </li>
+                <li>
+                    <a href="notes.html" class="headlinks"target="_self">ProFlow Theory (Notes)</a>
+
+                </li>
+                <li>
+                 <a href="nan.html" class="headlinks" target="_self">The NaN Result (A note on how data should be entered)</a>
+
+                 </li>
+                 <li>
+                    <a href="feedstudy.html" class="headlinks" target="_self">Sending Feedback and Viewing Study Material</a>
+                    </li>
+            </ul>
+        </div>
+        <div id="Analyzing A Unifom Flow">
+            <h3>Uniform Flow Analysis</h3>
+            <p>
+               Some of the main variables that can be calculated are listed below.
+                <ol>
+                    <li>Discharge-Q</li>
+                    <li>Normal Depth Y</li>
+                    <li>Velocity </li>
+                    <li>Froude Number Fr</li>
+                    <li>Reynolds Number</li>
+                    <blockquote><i><b>Extras: critical depth, specific energy, head losses, area, wetted perimeter, mean depth, hydraulic radius, sequent depth ratio, flow regime classification, slope classification etc.</b></i></blockquote>
+                </ol>
+                <blockquote> For each of those variables, there is a variety of known parameters combinations that the program supports. The combination of parameters at hand is shown the combinations table that appears below the channel shape image.<br>
+                </blockquote>
+                <img src="../images/comTable.PNG" height="300px">
+                <img src="../images/support2.PNG"  height="300px">
+            </p>
+            <p>
+                <h4>To find the Discharge Q</h4>
+                <ol>
+                    <li>
+                        Click on the first drop down arrow that is to the right of the word <b>Find</b> and <b>discharge. </b> A  choice window will show up<br>From the list of choices chose <b>Discharge</b><br>
+                        <img src="../images/getdischarge1.PNG"><br>
+                        The name of the selected variable will then appear to the left of this drop down arrow<br>
+                        After the selection, the window is supposed to close automatically, If this doesn't happen, click the same drop down arrow again to close it.
+                    </li>
+                    <li>
+                        Then click the drop down arrow to the right of the word <b>choose parameters</b>. From the list that shows up, check a combination of supported parameters that you have at hand, keep note of the symbols that appear on each option.<br>
+                        For our case chose parameters as shown in the image below.<br>
+                        <img src="../images/chooseparemeters.PNG" ><br>
+                        After this click the <b>OK</b> button <br>
+                        
+                        Note that if you chose parameters whose combination is not supported for the given variable you want to find, an alert will show up.<br>
+                        <img src="../images/notallowed.png"><br>
+                        Always refer to the combinations table incase you have forgotten.
+                    </li>
+                    <li>
+                        If All is well, an input area, as below should appear.<br>
+                        <img src="../images/inputs.PNG"><br>
+                    </li>
+                    <li>
+                        Enter in the following values <b>Y = 1.024, b = 3, n = 0.013,So =0.005</b><br>
+                        Then click the <b>solve</b> button.  
+                    </li>
+                </ol>
+                Output should appear as below<br>
+                <img src="../images/discharge2.PNG"><br> 
+            </p>
+            <p>
+                <b>A Note on the Triangular and Trapezoidal section</b><br>
+                For these sections, side slopes always usually needed to be specified. The specification  should follow the dimensioning shown in the shape picture. <br>
+                <img src="../images/othersections.PNG"><br>
+                Note that if you chose to enter angles,they should be in degrees.<br>
+                You can use the Tab button on your keyboard to move from one input textbox to another, insteda of using a mouse.<br><br>
+                <blockquote><i><b>Before using this application with your own values, First check whether the application you received is not broken by using <u>Test Values</u> in <u>CHAPTER 4</u> of the read me. <br> There can be a small difference in results you get but it shouldn't be large. In case you get highly contradicting results, check whether you have entered the data well, or  send us feedback, in case the problem persists.</b></i></blockquote>
+                <b>TRY IT OUT: </b> The discharge in a rectangular channel of width 6m , mannings n = 0.012, is 24 cubic meters per second. Find the normal depth, specify the froude number at the normal depth,  specify the critical depth, and classify the flow regime using <b>PROFLOW.</b><br>
+                <b>Hint: </b> Chose finding normal depth, and chose parameters whose values are stated in the question. <b>Ans</b> y = 0.878, Fr = 1.551, yc = 1.177
+
+                <blockquote><i><b>Test Values For other sections can be found in the read me file.</i></b></blockquote>
+                <b>NB: </b>The <i><strong>reset</strong></i> button can be used to clear all inputs, and the graphical area.
+            </p>
+        </div>
+    </div>
+        <div align="center"><a href="rapid.html" target="_self"><img src="../images/next.png" width="100px" height="50px"></a></div>
+    </body>
+</html>
